@@ -2,14 +2,7 @@ type GroupsMap<T> = {
   [key: string]: T[];
 };
 
-type ObjStrKeys = {
-  [key: string]: string | number;
-};
-
-export function groupByKey<T extends ObjStrKeys>(
-  items: T[],
-  key: keyof T,
-): GroupsMap<T> {
+export function groupByKey<T>(items: T[], key: keyof T): GroupsMap<T> {
   const result: GroupsMap<T> = {};
 
   items.forEach((element) => {
